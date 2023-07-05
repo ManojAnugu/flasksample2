@@ -1,0 +1,16 @@
+from flask import Flask
+
+app=Flask(__name__)
+@app.route('/results/<int:score>')
+def results(score):
+    result=''
+    if score<35:
+        result='fail'
+    else:
+        result='pass'
+    return result
+
+
+
+if __name__=="__main__":
+    app.run(debug=True)
